@@ -3,7 +3,7 @@ const form = document.querySelector('form');
 const result = document.querySelector('#result')
 // TODO: Add the first line of the event listener to handle form submission
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {         
     // Prevent the form from refreshing the page
     event.preventDefault();
 
@@ -12,6 +12,7 @@ form.addEventListener('submit', (event) => {
 
 // TODO: Write FizzBuzz logic here
 // If divisible by both 3 and 5, set the output to "FizzBuzz"
+let output;
 if (i % 15 === 0) {
     output = 'FizzBuzz';
 // If divisible by 3, set the output to "Fizz"
