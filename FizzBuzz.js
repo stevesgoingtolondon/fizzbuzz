@@ -1,14 +1,14 @@
 // TODO: Define constants for the form and the result display area
 input = document.getElementById('numberInput')
-document.getElementById('output')
+result = document.getElementById('result')
 form = document.getElementById('form')
 // TODO: Add the first line of the event listener to handle form submission
-formElement.addEventListener("submit", function(e) {
+form.addEventListener("submit", function(e) {
     e.preventDefault(); 
     // Prevent the form from refreshing the page
     e.preventDefault();
 
-    let num = parseInt(numberField.value);
+    let num = parseInt(input.value);
     let output = "";
 
 // TODO: Get the number from the form input
@@ -19,13 +19,13 @@ formElement.addEventListener("submit", function(e) {
 // If divisible by 5, set the output to "Buzz"
 // Otherwise, set the output to the number itself
 if (num % 15 === 0) {
-    result = "FizzBuzz";
+    output = "FizzBuzz";
 } else if (num % 3 === 0) {
-    result = "Fizz";
+    output = "Fizz";
 } else if (num % 5 === 0){
-    result = "Buzz";
+    output = "Buzz";
 } else {
-    result = num;
+    output = num;
 }
 // Display the result on the page
 result.textContent = output;
