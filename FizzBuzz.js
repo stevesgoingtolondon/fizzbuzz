@@ -1,38 +1,32 @@
-// Select the form, the number input and the result display
-const form = document.querySelector('form');
-const numberInput = document.querySelector('#numberInput');
-const result = document.querySelector('#result');
+// TODO: Define constants for the form and the result display area
+input = document.getElementById('numberInput')
+document.getElementById('output')
+form = document.getElementById('form')
+// TODO: Add the first line of the event listener to handle form submission
+formElement.addEventListener("submit", function(e) {
+    e.preventDefault(); 
+    // Prevent the form from refreshing the page
+    e.preventDefault();
 
-if (form && numberInput && result) {
-    form.addEventListener('submit', (event) => {
-        // Prevent the form from refreshing the page
-        event.preventDefault();
+    let num = parseInt(numberField.value);
+    let output = "";
 
-        const raw = numberInput.value.trim();
-        if (raw === '') {
-            result.textContent = 'Please enter a number.';
-            return;
-        }
+// TODO: Get the number from the form input
 
-        const i = parseInt(raw, 10);
-        if (Number.isNaN(i)) {
-            result.textContent = 'Please enter a valid integer.';
-            return;
-        }
-
-        let output;
-        if (i % 15 === 0) output = 'FizzBuzz';
-        else if (i % 3 === 0) output = 'Fizz';
-        else if (i % 5 === 0) output = 'Buzz';
-        else output = i;
-
-        result.textContent = output;
-    });
+// TODO: Write FizzBuzz logic here
+// If divisible by both 3 and 5, set the output to "FizzBuzz"
+// If divisible by 3, set the output to "Fizz"
+// If divisible by 5, set the output to "Buzz"
+// Otherwise, set the output to the number itself
+if (num % 15 === 0) {
+    result = "FizzBuzz";
+} else if (num % 3 === 0) {
+    result = "Fizz";
+} else if (num % 5 === 0){
+    result = "Buzz";
 } else {
-    // If any element is missing, show a helpful message in the console
-    console.error('FizzBuzz: required DOM elements not found (form, #numberInput, #result)');
+    result = num;
 }
-
-// References:
-// event.preventDefault() — prevents full page reload on form submit
-// parseInt(value, 10) — parse string to integer with radix
+// Display the result on the page
+result.textContent = output;
+});
